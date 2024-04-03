@@ -1,0 +1,8 @@
+---
+
+- name: Setup Vaultwarden qubelet
+  hosts: all
+  become: true
+  roles:
+    - accounts
+    - vaultwarden

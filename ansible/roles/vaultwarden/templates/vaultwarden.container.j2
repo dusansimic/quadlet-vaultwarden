@@ -1,0 +1,17 @@
+[Unit]
+Description=Vaultwarden container
+After=network-online.target
+
+[Container]
+Image=ghcr.io/dani-garcia/vaultwarden:{{ vaultwarden_image_tag }}
+ContainerName=vaultwarden
+Exec=/start.sh
+PublishPort={{ vaultwarden_publish_port }}:8080
+Volume=vaultwarden.volume:/data/
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=default.target

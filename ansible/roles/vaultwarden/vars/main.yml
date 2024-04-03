@@ -1,0 +1,8 @@
+---
+
+vaultwarden_unit_path: /home/ctrmgr/.config/containers/systemd
+vaultwarden_user: ctrmgr
+vaultwarden_group: ctrmgr
+
+vaultwarden_image_tag: latest
+vaultwarden_publish_port: "8080"
