@@ -3,6 +3,7 @@
 - name: Create units directory
   ansible.builtin.file:
     path: "{{ vaultwarden_unit_path }}"
+    state: directory
     owner: "{{ vaultwarden_user }}"
     group: "{{ vaultwarden_group }}"
     mode: u=rwx,g=rx,o=
@@ -38,10 +39,9 @@
 - name: Start container
   ansible.builtin.systemd:
     name: vaultwarden.service
-    state: started
+    state: restarted
     enabled: true
     daemon_reload: true
     scope: user
   become: true
   become_user: "{{ vaultwarden_user }}"
-

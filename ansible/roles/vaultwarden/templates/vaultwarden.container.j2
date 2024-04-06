@@ -6,7 +6,7 @@ After=network-online.target
 Image=ghcr.io/dani-garcia/vaultwarden:{{ vaultwarden_image_tag }}
 ContainerName=vaultwarden
 Exec=/start.sh
-PublishPort={{ vaultwarden_publish_port }}:8080
+PublishPort={{ vaultwarden_publish_port }}:80
 Volume=vaultwarden.volume:/data/
 
 [Service]
